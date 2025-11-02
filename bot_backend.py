@@ -18,9 +18,9 @@ scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("service_account.json", scope)
 client = gspread.authorize(creds)
-sheet1 = client.open_by_url(https://docs.google.com/spreadsheets/d/1RUOzf-1dM7C87CJtXo2Ae919sx_BSMDfu-APHKytFyU/edit?usp=drivesdk).worksheet("Sheet1")
-sheet2 = client.open_by_url(https://docs.google.com/spreadsheets/d/1RUOzf-1dM7C87CJtXo2Ae919sx_BSMDfu-APHKytFyU/edit?usp=drivesdk).worksheet("Sheet2")
-sheet3 = client.open_by_url(https://docs.google.com/spreadsheets/d/1RUOzf-1dM7C87CJtXo2Ae919sx_BSMDfu-APHKytFyU/edit?usp=drivesdk).worksheet("Sheet3")
+sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1RUOzf-1dM7C87CJtXo2Ae919sx_BSMDfu-APHKytFyU/edit?usp=drivesdk").worksheet("Sheet1")
+sheet2 = client.open_by_url("https://docs.google.com/spreadsheets/d/1RUOzf-1dM7C87CJtXo2Ae919sx_BSMDfu-APHKytFyU/edit?usp=drivesdk").worksheet("Sheet2")
+sheet3 = client.open_by_url("https://docs.google.com/spreadsheets/d/1RUOzf-1dM7C87CJtXo2Ae919sx_BSMDfu-APHKytFyU/edit?usp=drivesdk").worksheet("Sheet3")
 
 # === FUNCTION TO REMOVE DUPLICATES ===
 def remove_duplicates(links):
@@ -74,4 +74,5 @@ def count_views(message):
     bot.send_message(message.chat.id, f"Done! Counted {total} valid reels between 27 Oct - 31 Oct 2025.")
 
 # === RUN BOT ===
+
 bot.polling(none_stop=True)
